@@ -4,7 +4,7 @@ type Conta struct {
 	saldo int
 }
 
-func (c Conta) simular(valor int) int {
+func (c *Conta) simular(valor int) int {
 	c.saldo += valor
 	println(c.saldo)
 	return c.saldo
