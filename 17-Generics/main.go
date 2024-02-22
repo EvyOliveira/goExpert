@@ -13,6 +13,13 @@ func Soma[T Number](m map[string]T) T {
 	return soma
 }
 
+func Compara[T Number](a T, b T) bool {
+	if a == b {
+		return true
+	}
+	return false
+}
+
 func main() {
 	m := map[string]int{"Evelyn": 10000, "Stephen": 3000, "Bob": 4000}
 	m2 := map[string]float64{"Evelyn": 10000.30, "Stephen": 3000.5, "Bob": 4000.0}
@@ -21,4 +28,5 @@ func main() {
 	println(Soma(m))
 	println(Soma(m2))
 	println(Soma(m3))
+	println(Compara(10, 11))
 }
