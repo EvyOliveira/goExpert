@@ -13,7 +13,7 @@ func Soma[T Number](m map[string]T) T {
 	return soma
 }
 
-func Compara[T Number](a T, b T) bool {
+func Compara[T comparable](a T, b T) bool {
 	if a == b {
 		return true
 	}
