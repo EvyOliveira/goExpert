@@ -4,6 +4,7 @@ import (
 	"fmt"
 
 	"github.com/EvyOliveira/goExpert/18-PackagesAndModules/mathematics"
+	"github.com/google/uuid" 
 )
 
 func main() {
@@ -13,4 +14,5 @@ func main() {
 	fmt.Println(carro.Andar())
 	fmt.Println(mathematics.A)
 	fmt.Println(" Resultado: $v", soma)
+	fmt.Println(uuid.New())
 }
