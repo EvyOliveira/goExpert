@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-	c := http.Client{Timeout: time.Second}
+	c := http.Client{Timeout: time.Millisecond}
 	resp, err := c.Get("http://google.com")
 	if err != nil {
 		panic(err)
