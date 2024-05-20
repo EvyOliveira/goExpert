@@ -18,7 +18,7 @@ func bookHotel(ctx context.Context) {
 	case <-ctx.Done():
 		fmt.Println("Hotel booking cancelled. Timeout reached.")
 		return
-	case <-time.After(5 * time.Second):
+	case <-time.After(1 * time.Second):
 		fmt.Println("Hotel booked.")
 	}
 }
