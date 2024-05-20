@@ -9,7 +9,7 @@ import (
 
 func main() {
 	ctx := context.Background()
-	ctx, cancel := context.WithTimeout(ctx, time.Second)
+	ctx, cancel := context.WithTimeout(ctx, time.Microsecond)
 	defer cancel()
 
 	req, err := http.NewRequestWithContext(ctx, "GET", "http://google.com", nil)
