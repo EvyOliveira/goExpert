@@ -57,8 +57,21 @@ func main() {
 	// }
 
 	// get two registers at the same time using pagination
+	// var products []Product
+	// db.Limit(2).Offset(2).Find(&products)
+	// for _, product := range products {
+	//	fmt.Println(product)
+	//}
+
+	// select records using where
 	var products []Product
-	db.Limit(2).Offset(2).Find(&products)
+	db.Where("price > ?", 100).Find(&products)
+	for _, product := range products {
+		fmt.Println(product)
+	}
+
+	// select records using like
+	db.Where("name LIKE ?", "%book%").Find(&products)
 	for _, product := range products {
 		fmt.Println(product)
 	}
