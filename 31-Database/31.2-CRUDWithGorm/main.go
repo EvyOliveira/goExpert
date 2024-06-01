@@ -64,15 +64,27 @@ func main() {
 	//}
 
 	// select records using where
-	var products []Product
-	db.Where("price > ?", 100).Find(&products)
-	for _, product := range products {
-		fmt.Println(product)
-	}
+	// var products []Product
+	// db.Where("price > ?", 100).Find(&products)
+	// for _, product := range products {
+	//	fmt.Println(product)
+	//}
 
 	// select records using like
-	db.Where("name LIKE ?", "%book%").Find(&products)
-	for _, product := range products {
-		fmt.Println(product)
-	}
+	// var products []Product
+	// db.Where("name LIKE ?", "%book%").Find(&products)
+	// for _, product := range products {
+	//	fmt.Println(product)
+	//}
+
+	// modify first record name and delete the secound record
+	var p Product
+	db.First(&p, 1)
+	p.Name = "New Mouse"
+	db.Save(&p)
+
+	var p2 Product
+	db.First(&p2, 1)
+	fmt.Println(p2.Name)
+	db.Delete(&p2)
 }
