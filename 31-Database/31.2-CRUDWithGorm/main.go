@@ -43,8 +43,22 @@ func main() {
 	//fmt.Println(product)
 
 	// select all
+	// var products []Product
+	// db.Find(&products)
+	// for _, product := range products {
+	//   fmt.Println(product)
+	// }
+
+	// get two registers at the same time
+	// var products []Product
+	// db.Limit(2).Find(&products)
+	// for _, product := range products {
+	//	fmt.Println(product)
+	// }
+
+	// get two registers at the same time using pagination
 	var products []Product
-	db.Find(&products)
+	db.Limit(2).Offset(2).Find(&products)
 	for _, product := range products {
 		fmt.Println(product)
 	}
