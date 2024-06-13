@@ -41,7 +41,7 @@ func main() {
 	})
 
 	var products []Product
-	db.Find(&products)
+	db.Preload("Category").Find(&products)
 	for _, product := range products {
 		fmt.Println(product.Name, product.Category.Name)
 	}
